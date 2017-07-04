@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PagerSlidingTab">
+        <attr name="pstSelectedTextSize" format="dimension" />
+        <attr name="pstIndicatorColor" format="color" />
+        <attr name="pstIndicatorHeight" format="dimension" />
+        <attr name="pstUnderlineColor" format="color" />
+        <attr name="pstUnderlineHeight" format="dimension" />
+        <attr name="pstTabPadding" format="dimension" />
+        <attr name="pstBackground" format="reference" />
+        <attr name="pstExpandMode" format="enum">
+            <enum name="wrap" value="0" />
+            <enum name="fixed" value="1" />
+            <enum name="expanded" value="2" />
+            <enum name="react" value="3" />
+        </attr>
+        <attr name="pstFixedWidth" format="dimension" />
+        <attr name="pstScrollOffset" format="dimension" />
+        <attr name="pstIndicatorMode" format="enum">
+            <enum name="match" value="0" />
+            <enum name="wrap" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
