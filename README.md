@@ -16,7 +16,7 @@
 ![](http://img.blog.csdn.net/20170704182631977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2xrZGI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 我做了一个样例程序，其中的较难点在于计算下划线的位置，和下划线的动画效果。 
 
-```
+```Java
     // 根据当前选定的tab，得到indicator应该移动到的位置
     private Pair<Float, Float> getIndicatorTargetLeftRight(int position, float positionOffset) {
         View tab = tabsContainer.getChildAt(position);
@@ -47,10 +47,12 @@
             right = middle + textLength / 2f;
         }
         return new Pair<>(left, right);
-    }```
+}    
+```
     
-    上面是计算下划线位置的代码，通过传入在onPageScrolled()中获得的position和positionOffset，计算下划线是在某一个标签下，或者某两个标签之间的位置。需要注意的是，由于各标签的长度可能不一，所以下划线的长度在滑动中也可能发生变化，所以需分别计算下划线的left和right。 
-    ```
+上面是计算下划线位置的代码，通过传入在onPageScrolled()中获得的position和positionOffset，计算下划线是在某一个标签下，或者某两个标签之间的位置。需要注意的是，由于各标签的长度可能不一，所以下划线的长度在滑动中也可能发生变化，所以需分别计算下划线的left和right。 
+
+```
     private boolean isAnimateRunning = false;
     private static final String TARGET_LEFT = "targetLeft";
     private static final String TARGET_RIGHT = "targetRight";
@@ -89,8 +91,9 @@
         });
         animator.start();
         isAnimateRunning = true;
-        ```
+        
     }
-    这是切换标签时下划线运行滑动动画的代码，使用ValueAnimator实现，并且对下划线超出边界的情况做了特殊处理，以防止滑动距离过大时，滑动速度过快。
+ ```
+    这是切换标签时下划线运行滑动动画的代码，使用ValueAnimator实现，并且对下划线超出边界的情况做了特殊处理，以防止滑动距离过大时，滑动速度过快。
     
     更多细节，请下载项目文件。
